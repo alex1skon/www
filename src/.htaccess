@@ -1,0 +1,2 @@
+AddHandler fcgid-script .php .html .htm
+AddHandler php-script .html
