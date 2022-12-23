@@ -1,10 +1,16 @@
 <?php
 if (isset($_POST['login'])) {
-  $login = $_POST['login'];
-  if ($login == '') {
-    unset($login);
+    $login = $_POST['login'];
+    if ($login == '') {
+        unset($login);
+    }
+}
+if (isset($_POST['email'])) {
+  $email = $_POST['email'];
+  if ($email == '') {
+    unset($email);
   }
-} //заносим введенный пользователем логин в переменную $login, если он пустой, то уничтожаем переменную
+}
 if (isset($_POST['password'])) {
   $password = $_POST['password'];
   if ($password == '') {

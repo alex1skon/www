@@ -18,7 +18,7 @@
     <!--**** В текстовое поле (name="login" type="text") пользователь вводит свой логин ***** -->
     <p>
         <label>Ваш e-mail:<br></label>
-        <input name="login" type="text" size="15" maxlength="30">
+        <input name="email" type="text" size="15" maxlength="30">
     </p>
     <p>
         <label>Ваш пароль:<br></label>
