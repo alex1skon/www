@@ -17,7 +17,7 @@ if (isset($_POST['password'])) {
     unset($password);
   }
 }
-if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
   exit("Email введен неправильно!");
 }
 //заносим введенный пользователем пароль в переменную $password, если он пустой, то уничтожаем переменную
@@ -39,7 +39,7 @@ $email = trim($email);
 // подключаемся к базе
 include("connect.php"); // файл bd.php должен быть в той же папке, что и все остальные, если это не так, то просто измените путь
 // проверка на существование пользователя с таким же логином
-$result = $connection->query("SELECT id FROM users1 WHERE login='$login'");
+$result = $connection->query("SELECT id FROM users1 WHERE email='$email'");
 $myrow = $result->fetch_array(MYSQLI_NUM);
 if ($result->num_rows > 0) {
   exit("Извините, введённый вами email уже зарегистрирован. Введите другой логин.");
