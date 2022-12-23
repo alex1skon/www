@@ -36,10 +36,10 @@ $email = trim($email);
 // подключаемся к базе
 include("connect.php"); // файл bd.php должен быть в той же папке, что и все остальные, если это не так, то просто измените путь
 // проверка на существование пользователя с таким же логином
-$result = $connection->query("SELECT id FROM users1 WHERE login='$login'");
+$result = $connection->query("SELECT id FROM users1 WHERE email='$email'");
 $myrow = $result->fetch_array(MYSQLI_NUM);
 if (!empty($myrow['id'])) {
-  exit("Извините, введённый вами логин уже зарегистрирован. Введите другой логин.");
+  exit("Извините, введённый вами email уже зарегистрирован. Введите другой логин.");
 }
 // если такого нет, то сохраняем данные
 $result2 = $connection->query("INSERT INTO users1 (login,password,email) VALUES('$login','$password','$email')");
