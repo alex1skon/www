@@ -24,8 +24,7 @@
 </p></form>
     </body>
 </html>
-/*
-<?php
+<!-- <?php
   require_once('src/php/login.php');
   $connection = new mysqli($hostname, $username, $password, $database);
   if ($connection->connect_error) die("Connect error!");
@@ -72,4 +71,4 @@
       $string = stripslashes($string);
     return $connection->real_escape_string($string);
   }
-?> */
+?> */ -->
