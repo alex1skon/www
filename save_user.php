@@ -18,7 +18,7 @@ if (isset($_POST['password'])) {
   }
 }
 //заносим введенный пользователем пароль в переменную $password, если он пустой, то уничтожаем переменную
-if (empty($login) or empty($password)) //если пользователь не ввел логин или пароль, то выдаем ошибку и останавливаем скрипт
+if (empty($login) or empty($password) or empty($email)) //если пользователь не ввел логин или пароль, то выдаем ошибку и останавливаем скрипт
 {
   exit("Вы ввели не всю информацию, вернитесь назад и заполните все поля!");
 }
@@ -27,9 +27,12 @@ $login = stripslashes($login);
 $login = htmlspecialchars($login);
 $password = stripslashes($password);
 $password = htmlspecialchars($password);
+$email = stripslashes($email);
+$email = htmlspecialchars($email);
 //удаляем лишние пробелы
 $login = trim($login);
 $password = trim($password);
+$email = trim($email);
 // подключаемся к базе
 include("connect.php"); // файл bd.php должен быть в той же папке, что и все остальные, если это не так, то просто измените путь
 // проверка на существование пользователя с таким же логином
@@ -39,7 +42,7 @@ if (!empty($myrow['id'])) {
   exit("Извините, введённый вами логин уже зарегистрирован. Введите другой логин.");
 }
 // если такого нет, то сохраняем данные
-$result2 = $connection->query("INSERT INTO users1 (login,password) VALUES('$login','$password')");
+$result2 = $connection->query("INSERT INTO users1 (login,password,email) VALUES('$login','$password','$email')");
 // Проверяем, есть ли ошибки
 if ($result2 == 'TRUE') {
   echo "Вы успешно зарегистрированы! Теперь вы можете зайти на сайт. <a href='index.php'>Главная страница</a>";
