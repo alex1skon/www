@@ -1,0 +1,1 @@
+CREATE USER 'admin'@'localhost' IDENTIFIED WITH mysql_native_password BY '***';GRANT USAGE ON *.* TO 'admin'@'localhost';
