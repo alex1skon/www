@@ -1,5 +1,6 @@
 <?php
 $email = ' ';
+error_reporting(E_ERROR);
 //echo "<br> " . print_r($_POST['email']);
 if (empty($_POST['email']) == 0) {
     if (isset($_POST['email'])) {
