@@ -9,7 +9,7 @@
 
 <body>
 <h2>Регистрация</h2>
-<form action="src/php/save_user.php" method="post">
+<form action="save_user.php" method="post">
     <!--**** save_user.php - это адрес обработчика.  То есть, после нажатия на кнопку "Зарегистрироваться", данные из полей  отправятся на страничку save_user.php методом "post" ***** -->
     <p>
         <label>Ваш логин:<br></label>
