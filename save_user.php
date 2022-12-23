@@ -38,15 +38,11 @@ include("connect.php"); // файл bd.php должен быть в той же 
 // проверка на существование пользователя с таким же логином
 $result = $connection->query("SELECT id FROM users1 WHERE email='$email'");
 $myrow = $result->fetch_array(MYSQLI_NUM);
-// echo '<br>' . print_r($myrow);
-if (empty($myrow['id'])) {
-}
-else
-{
+if ($myrow['id'] == NULL) {
   exit("Извините, введённый вами email уже зарегистрирован. Введите другой логин.");
 }
 // если такого нет, то сохраняем данные
-// $result2 = $connection->query("INSERT INTO users1 (login,password,email) VALUES('$login','$password','$email')");
+$result2 = $connection->query("INSERT INTO users1 (login,password,email) VALUES('$login','$password','$email')");
 // Проверяем, есть ли ошибки
 if ($result2 == 'TRUE') {
   echo "Вы успешно зарегистрированы! Теперь вы можете зайти на сайт. <a href='index.php'>Главная страница</a>";
