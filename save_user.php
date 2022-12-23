@@ -17,6 +17,9 @@ if (isset($_POST['password'])) {
     unset($password);
   }
 }
+if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+  exit("Email введен неправильно!");
+}
 //заносим введенный пользователем пароль в переменную $password, если он пустой, то уничтожаем переменную
 if (empty($login) or empty($password) or empty($email)) //если пользователь не ввел логин или пароль, то выдаем ошибку и останавливаем скрипт
 {
