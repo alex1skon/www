@@ -1,9 +1,9 @@
 <?php
 if (isset($_POST['login'])) {
-    $login = $_POST['login'];
-    if ($login == '') {
-        unset($login);
-    }
+  $login = $_POST['login'];
+  if ($login == '') {
+    unset($login);
+  }
 }
 if (isset($_POST['email'])) {
   $email = $_POST['email'];
@@ -38,11 +38,15 @@ include("connect.php"); // файл bd.php должен быть в той же 
 // проверка на существование пользователя с таким же логином
 $result = $connection->query("SELECT id FROM users1 WHERE email='$email'");
 $myrow = $result->fetch_array(MYSQLI_NUM);
-if (!empty($myrow['id'])) {
+// echo '<br>' . print_r($myrow);
+if (empty($myrow['id'])) {
+}
+else
+{
   exit("Извините, введённый вами email уже зарегистрирован. Введите другой логин.");
 }
 // если такого нет, то сохраняем данные
-$result2 = $connection->query("INSERT INTO users1 (login,password,email) VALUES('$login','$password','$email')");
+// $result2 = $connection->query("INSERT INTO users1 (login,password,email) VALUES('$login','$password','$email')");
 // Проверяем, есть ли ошибки
 if ($result2 == 'TRUE') {
   echo "Вы успешно зарегистрированы! Теперь вы можете зайти на сайт. <a href='index.php'>Главная страница</a>";
