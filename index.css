@@ -1,36 +1,65 @@
-.modal {
-    display: none; /* Скрыто по умолчанию */
-    position: fixed; /* Оставаться на месте */
-    z-index: 1; /* Сидеть на вершине */
-    left: 0;
-    top: 0;
-    width: 100%; /* Полная ширина */
-    height: 100%; /* Полная высота */
-    overflow: auto; /* Включите прокрутку, если это необходимо */
-    background-color: rgb(0,0,0); /* Цвет запасной вариант */
-    background-color: rgba(0,0,0,0.4); /* Черный с непрозрачностью */
+.card{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    height: 500px;
+    border-radius: 5px;
+    flex-direction: column;
+    background-color: #363636;
 }
 
-/* Модальное содержание/коробка */
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% сверху и по центру */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Может быть больше или меньше, в зависимости от размера экрана */
+.content{
+    margin-top: 50px;
 }
 
-/* Кнопка закрытия */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+.but{
+    border: none;
+    border-radius: 5px;
+    width: 20vh;
+    height: 30px;
 }
 
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+.item{
+    margin-bottom: 20px;
+}
+
+div:last-child{
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.but:hover{
+    opacity: 0.6;
+    transition-duration: 0.2s;
+}
+
+.field{
+    width: 20vh;
+    height: 24px;
+    outline: 0 !important;
+    border: 0px;
+    border-radius: 3px;
+}
+.field::-webkit-input-placeholder {
+    text-indent: 0px;
+    transition: text-indent 1s ease;
+}
+
+.field:focus::-webkit-input-placeholder {
+    text-indent: 300px;
+    transition: text-indent 1s ease;
+}
+
+.text{
+    padding-top: 20px;
+    text-align: center;
+    font-size: 30px;
+    color:white;
+    border-radius: 5px 5px 0 0;
+    height: 10%;
+    width: 100%;
+    background-color: #282828;
+    margin:0;
 }
