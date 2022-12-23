@@ -19,6 +19,11 @@
     <p>
         <label>Ваш e-mail:<br></label>
         <input name="email" type="text" size="15" maxlength="30">
+        <?php
+//        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+//            exit("Email введен неправильно!");
+//        }
+//        ?>
     </p>
     <p>
         <label>Ваш пароль:<br></label>
