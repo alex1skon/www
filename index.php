@@ -3,7 +3,8 @@
 <meta charset="utf-8">
 
 <head>
-  <title>Регистрация</title>
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="../index.css"/>
 </head>
 
 <body>
