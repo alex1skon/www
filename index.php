@@ -8,7 +8,7 @@
 
 <body>
   <h2>Регистрация</h2>
-  <form action="src/php/save_user.php" method="post">
+  <form action="save_user.php" method="post">
     <!--**** save_user.php - это адрес обработчика.  То есть, после нажатия на кнопку "Зарегистрироваться", данные из полей  отправятся на страничку save_user.php методом "post" ***** -->
     <p>
       <label>Ваш логин:<br></label>
@@ -29,7 +29,7 @@
 
 </html>
 <!-- <?php
-      require_once('src/php/login.php');
+      require_once('login.php');
       $connection = new mysqli($hostname, $username, $password, $database);
       if ($connection->connect_error) die("Connect error!");
 
@@ -66,8 +66,6 @@
 
       function mysql_fix_string($connection, $string)
       {
-        if (get_magic_quotes_gpc())
-          $string = stripslashes($string);
         return $connection->real_escape_string($string);
       }
       ?> */ -->

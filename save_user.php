@@ -25,15 +25,15 @@ $password = htmlspecialchars($password);
 $login = trim($login);
 $password = trim($password);
 // подключаемся к базе
-include("src/php/bd.php"); // файл bd.php должен быть в той же папке, что и все остальные, если это не так, то просто измените путь
+include("connect.php"); // файл bd.php должен быть в той же папке, что и все остальные, если это не так, то просто измените путь
 // проверка на существование пользователя с таким же логином
-$result = mysql_query("SELECT id FROM users1 WHERE login='$login'", $db);
-$myrow = mysql_fetch_array($result);
+$result = $connection->query("SELECT id FROM users1 WHERE login='$login'");
+$myrow = $result->fetch_array(MYSQLI_NUM);
 if (!empty($myrow['id'])) {
   exit("Извините, введённый вами логин уже зарегистрирован. Введите другой логин.");
 }
 // если такого нет, то сохраняем данные
-$result2 = mysql_query("INSERT INTO users (login,password) VALUES('$login','$password')");
+$result2 = $connection->query("INSERT INTO users1 (login,password) VALUES('$login','$password')");
 // Проверяем, есть ли ошибки
 if ($result2 == 'TRUE') {
   echo "Вы успешно зарегистрированы! Теперь вы можете зайти на сайт. <a href='index.php'>Главная страница</a>";
