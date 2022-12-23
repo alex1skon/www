@@ -31,10 +31,10 @@ if (empty($_POST['email']) == 0) {
 
 <body>
 <div class="card">
-    <div class="content">
-        <p class="text">
-            Регистрация
-        </p>
+  <p class="text">
+    Регистрация
+  </p>
+  <div class="content">
         <form
             <?php
             if ($error_with_email) {
@@ -63,7 +63,7 @@ if (empty($_POST['email']) == 0) {
             </div>
             <?php
             if (!$error_with_email) {
-                echo "<br>Неверный формат Email!";
+                echo "Неверный формат Email!";
             }
             ?>
             <div class="item">
