@@ -8,18 +8,6 @@
 </head>
 
 <body>
-<button id="myBtn">Открыть модальный</button>
-
-<!-- Модальный -->
-<div id="myModal" class="modal">
-
-    <!-- Модальное содержание -->
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>Некоторый текст в модальном..</p>
-    </div>
-
-</div>
 <h2>Регистрация</h2>
 <form action="src/php/save_user.php" method="post">
     <!--**** save_user.php - это адрес обработчика.  То есть, после нажатия на кнопку "Зарегистрироваться", данные из полей  отправятся на страничку save_user.php методом "post" ***** -->
