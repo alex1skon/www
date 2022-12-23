@@ -25,9 +25,9 @@ $password = htmlspecialchars($password);
 $login = trim($login);
 $password = trim($password);
 // подключаемся к базе
-include("bd.php"); // файл bd.php должен быть в той же папке, что и все остальные, если это не так, то просто измените путь
+include("src/php/bd.php"); // файл bd.php должен быть в той же папке, что и все остальные, если это не так, то просто измените путь
 // проверка на существование пользователя с таким же логином
-$result = mysql_query("SELECT id FROM users WHERE login='$login'", $db);
+$result = mysql_query("SELECT id FROM users1 WHERE login='$login'", $db);
 $myrow = mysql_fetch_array($result);
 if (!empty($myrow['id'])) {
   exit("Извините, введённый вами логин уже зарегистрирован. Введите другой логин.");
