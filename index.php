@@ -80,6 +80,28 @@ if (empty($_POST['email']) == 0) {
     </div>
     </form>
 </div>
+<script>
+    let but = document.querySelector(".but");
+    console.log(but.type)
+    but.addEventListener('click', function () {
+        let fields = document.querySelectorAll('.field');
+        let err = document.querySelectorAll('.nop');
+        console.log(fields)
+        let tmp = 0;
+        for (let i = 0; i < fields.length; i++) {
+            if (fields[i].value == '') {
+                err[i].style.display = 'flex';
+                fields[i].style.border = '2px solid #cc0000'
+            } else {
+                err[i].style.display = 'none';
+                fields[i].style.border = 'none'
+                tmp++;
+            }
+        }
+        if (tmp == 3)
+            but.type = 'submit';
+    })
+</script>
 </body>
 
 </html>
