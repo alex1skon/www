@@ -36,8 +36,9 @@ $email = htmlspecialchars($email);
 $login = trim($login);
 $password = trim($password);
 $email = trim($email);
+$password = hash('md5', $password);
 // подключаемся к базе
-include("connect.php"); // файл bd.php должен быть в той же папке, что и все остальные, если это не так, то просто измените путь
+include("src/php/connect.php"); // файл bd.php должен быть в той же папке, что и все остальные, если это не так, то просто измените путь
 // проверка на существование пользователя с таким же логином
 $result = $connection->query("SELECT id FROM users1 WHERE email='$email'");
 $myrow = $result->fetch_array(MYSQLI_NUM);
